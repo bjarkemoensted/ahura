@@ -17,8 +17,18 @@
     </iframe>
 </div>
 <div>
-    The above is an interactive plot based on posts and comments from the Facebook event page of the now infamous <a href="https://www.facebook.com/events/1648712378737281/">Kählervasearrangement</a>.<br>
+<table style="max-width:900px;">
+  <tbody>
+    <tc>
+      <td>
+    
+        The above is an interactive plot based on posts and comments from the Facebook event page of the now infamous <a href="https://www.facebook.com/events/1648712378737281/">Kählervasearrangement</a>.<br>
 Each point corresponds to a Facebook user, with the x axis denoting the mean sentiment of that user's posts and comments. Sentiments were computed from a list of Danish words and their perceived sentiment obtained <a href="https://github.com/fnielsen/afinn/blob/master/afinn/data/AFINN-da-32.txt">here</a>. The y axis denotes the logarithm (base 10) of the total number of posts and comments by the given user. The log scale was necessary as some users chose to leave almost 500 posts and comments on the event page. Each point is colour coded based on the user's estimated spelling prowess, with hot and cold colours corresponding to large and small fractions of misspelled words. This was estimated by comparing words from each user's text corpus with a long list of correctly spelled words. This list seems to have had some shortcomings, as many of the words deemed to be misspellings by my software appears to be correctly spelled though atypical variants or conjoined versions of existing words. These words appear when hovering the cursor over a data point.
+          
+      </td>
+    </tc>
+  </tbody>
+</table>
 </div>
 </body>
 </html>
