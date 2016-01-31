@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style>
-            div.bar {
+
+<head>
+    <style>
+        div.bar {
             display: inline-block;
             width: 20px;
-            height: 75px;   /* We'll override this later */
+            height: 75px;
+            /* We'll override this later */
             background-color: teal;
-            margin-right: 1px; 
+            margin-right: 1px;
         }
-        </style>
-        
-        <meta charset="utf-8">
-        <title>D3 Test</title>
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    </head>
-    <body>
-        <script type="text/javascript">
-            var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19,
-                14, 11, 22, 29, 11, 13, 12, 17, 18, 10,
-                24, 18, 25, 9, 3 ];
-            f = function(x){return "nummer "+(1+x);};
-            
-            d3.select("body").selectAll("div")
+
+    </style>
+
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script type="text/javascript" src="d3/d3.v3.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var dataset = [25, 7, 5, 26, 11, 8, 25, 14, 23, 19,
+            14, 11, 22, 29, 11, 13, 12, 17, 18, 10,
+            24, 18, 25, 9, 3
+        ];
+
+        function f(x) {
+            return "nummer " + (1 + x);
+        }
+
+        d3.select("body").selectAll("div")
             .data(dataset)
             .enter()
             .append("div")
             .attr("class", "bar")
-            .style("height", d => 5*d+"px")
-            .style("background-color", d => d>20?"red":"green");
-        </script>
+            .style("height", d => 5 * d + "px")
+            .style("background-color", d => d > 20 ? "red" : "green");
+
+    </script>
     <p>
-        hej    
+        Herunder leger jeg med SVG.
     </p>
-    </body>
-</html>  
+    <svg width="500" height="50">
+        <rect x="0" y="0" width="500" height="50" />
+        <circle cx="250" cy="25" r="25" fill="rgba(255,0,0,0.7)" stroke="green" stroke-width="5" />
+    </svg>
+    <p>
+        Herunder leger jeg med autogenereret SVG.
+    </p>
+    <svg id="drawing_stuff" width="500" height="200">
+        <script type="text/javascript">
+            var dataset = [25, 7, 5, 26, 11, 8, 25, 14, 23, 19,
+                14, 11, 22, 29, 11, 13, 12, 17, 18, 10,
+                24, 18, 25, 9, 3
+            ];
+            //            d3.select("#drawing_stuff").selectAll("p").text("hest")
+            d3.select("#drawing_stuff").selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("circle")
+            .attr("cx", d => 100+10*d)
+            .attr("cy", "100")
+            .attr("r", "20")
+            .attr("fill", d => "rgba("+10*d+","+(255-10*d)+",0,0.7)")
+        </script>
+    </svg>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
