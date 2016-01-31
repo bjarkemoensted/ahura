@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            div.bar {
+            display: inline-block;
+            width: 20px;
+            height: 75px;   /* We'll override this later */
+            background-color: teal;
+            margin-right: 1px; 
+        }
+        </style>
+        
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19,
+                14, 11, 22, 29, 11, 13, 12, 17, 18, 10,
+                24, 18, 25, 9, 3 ];
+            f = function(x){return "nummer "+(1+x);};
+            
+            d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", d => 5*d+"px")
+            .style("background-color", d => d>20?"red":"green");
+        </script>
+    <p>
+        hej    
+    </p>
+    </body>
+</html>  
